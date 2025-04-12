@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+   
+    <title>Car Listing</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .card {
+            background: white;
+            width: 400px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            overflow: hidden;
+            position: relative;
+        }
+        .image-container {
+            display: flex;
+            overflow-x: scroll;
+            scroll-behavior: smooth;
+            width: 100%;
+            white-space: nowrap;
+        }
+        .image-container img {
+            width: 100%;
+            flex-shrink: 0;
+        }
+        .card-content {
+            padding: 15px;
+        }
+        .price {
+            font-size: 22px;
+            color: #333;
+            font-weight: bold;
+        }
+        .details {
+            font-size: 14px;
+            color: #555;
+            margin-top: 5px;
+        }
+        .tags span {
+            display: inline-block;
+            background: #90effa;
+            padding: 5px 10px;
+            margin: 3px;
+            border-radius: 5px;
+            font-size: 12px;
+        }
+        .button {
+            display: block;
+            width: 100%;
+            text-align: center;
+            background: blue;
+            color: white;
+            padding: 10px;
+            font-size: 16px;
+            text-decoration: none;
+            border-radius: 0 0 10px 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="image-container">
+            <img src="https://www.edmunds.com/assets/m/for-sale/f4-vnkktud35fa040466/img-1-600x400.jpg" alt="Toyota Yaris">
+            <img src="https://www.edmunds.com/assets/m/for-sale/f4-vnkktud35fa040466/img-2-600x400.jpg" alt="Toyota Yaris Side View">
+            <img src="https://www.edmunds.com/assets/m/for-sale/f4-vnkktud35fa040466/img-3-600x400.jpg" alt="Toyota Yaris Rear View">
+        </div>
+        <div class="card-content">
+            <div class="price">$14,970 <span style="color:green; font-size:14px;">(Fair Price)</span></div>
+            <div class="details">27,288 miles - No accidents, 2 owners, Government vehicle</div>
+            <div class="details">4-cylinder automatic</div>
+            <div class="tags">
+                <span>Bluetooth</span> <span>Tire Pressure Warning</span> <span>USB Inputs</span>
+                <span>Trip Computer</span> <span>Rear Bench Seats</span>
+            </div>
+        </div>
+        <a href="#" class="button">back to home</a>
+    </div>
+</body>
+</html>
