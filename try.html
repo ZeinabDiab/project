@@ -9,81 +9,84 @@
             padding: 0;
             box-sizing: border-box;
         }
+
         body {
             font-family: Arial, sans-serif;
             background-color: #f8f8f8;
+            min-height: 100vh;
             display: flex;
             justify-content: center;
-            align-items: center;
-            height: 100vh;
-            width: 100vw;
-            margin: 0;
-            overflow: hidden;
+            align-items: flex-start;
+            padding: 20px;
         }
+
         .card {
             background: white;
-            width: 95%;
-            max-width: 900px;
-            height: 95vh; /* Make the card height fit screen */
+            width: 99%;
+            max-width: 1300px;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
             display: flex;
             flex-direction: column;
+            margin: 60px auto 20px auto; /* هنا التعديل */
         }
+
         .image-container {
             display: flex;
-            overflow-x: scroll;
+            overflow-x: auto;
             scroll-behavior: smooth;
             width: 100%;
-            height: 40vh; /* Reduced from 60vh */
+            height: 30vh;
         }
+
         .image-container img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             flex-shrink: 0;
         }
+
         .card-content {
-            padding: 20px;
-            flex-grow: 1;
+            padding: 20px 30px;
             display: flex;
             flex-direction: column;
-            justify-content: flex-start;
-            overflow-y: auto;
+            gap: 10px;
+            font-size: 18px;
         }
+
         .price {
             font-size: 26px;
             color: #333;
             font-weight: bold;
         }
+
         .details {
-            font-size: 16px;
             color: #555;
-            margin-top: 8px;
         }
+
         .tags {
             margin-top: 10px;
         }
+
         .tags span {
             display: inline-block;
             background: #90effa;
-            padding: 5px 10px;
-            margin: 3px 5px 3px 0;
-            border-radius: 5px;
-            font-size: 13px;
+            padding: 8px 14px;
+            margin: 4px 6px 4px 0;
+            border-radius: 6px;
+            font-size: 16px;
         }
+
         .button {
             display: block;
             width: 100%;
             text-align: center;
             background: blue;
             color: white;
-            padding: 12px;
-            font-size: 16px;
+            padding: 16px;
+            font-size: 18px;
             text-decoration: none;
             border-radius: 0 0 10px 10px;
-            margin-top: auto;
         }
     </style>
 </head>
@@ -97,7 +100,7 @@
     <div class="card-content">
         <div class="price">$14,970 <span style="color:green; font-size:16px;">(Fair Price)</span></div>
 
-        <div class="details" style="margin-top: 10px; font-style: italic; color: #444;">
+        <div style="font-style: italic; color: #444;">
             Toyota Yaris is a compact, fuel-efficient sedan known for its reliability and smooth driving experience.
         </div>
 
