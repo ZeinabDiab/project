@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+   
     <title>Car Listing</title>
     <style>
         * {
@@ -22,13 +23,13 @@
 
         .card {
             background: white;
-            width: 99%;
-            max-width: 1300px;
+            width: 100%;
+            max-width: 800px; 
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             display: flex;
             flex-direction: column;
-            margin: 60px auto 20px auto; /* هنا التعديل */
+            margin: 20px auto;
         }
 
         .image-container {
@@ -36,7 +37,7 @@
             overflow-x: auto;
             scroll-behavior: smooth;
             width: 100%;
-            height: 30vh;
+            height: 300px; 
         }
 
         .image-container img {
@@ -47,46 +48,59 @@
         }
 
         .card-content {
-            padding: 20px 30px;
+            padding: 20px;
             display: flex;
             flex-direction: column;
             gap: 10px;
-            font-size: 18px;
+            font-size: 16px;
         }
 
         .price {
-            font-size: 26px;
+            font-size: 24px;
             color: #333;
             font-weight: bold;
         }
 
         .details {
             color: #555;
+            font-size: 15px;
         }
 
         .tags {
             margin-top: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
         }
 
         .tags span {
-            display: inline-block;
-            background: #90effa;
-            padding: 8px 14px;
-            margin: 4px 6px 4px 0;
+            background: #e0f7fa;
+            padding: 6px 12px;
             border-radius: 6px;
-            font-size: 16px;
+            font-size: 14px;
         }
 
         .button {
             display: block;
             width: 100%;
             text-align: center;
-            background: blue;
+            background: #1e88e5;
             color: white;
-            padding: 16px;
-            font-size: 18px;
+            padding: 14px;
+            font-size: 16px;
             text-decoration: none;
             border-radius: 0 0 10px 10px;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        @media (max-width: 600px) {
+            .card {
+                max-width: 100%;
+            }
+            .image-container {
+                height: 250px;
+            }
         }
     </style>
 </head>
@@ -98,9 +112,9 @@
         <img src="imgs/car3.jpg" alt="Toyota Yaris Rear View">
     </div>
     <div class="card-content">
-        <div class="price">$14,970 <span style="color:green; font-size:16px;">(Fair Price)</span></div>
+        <div class="price">$14,970 <span style="color:#388e3c; font-size:15px;">(Fair Price)</span></div>
 
-        <div style="font-style: italic; color: #444;">
+        <div style="font-style: italic; color: #444; font-size: 15px; margin-bottom: 10px;">
             Toyota Yaris is a compact, fuel-efficient sedan known for its reliability and smooth driving experience.
         </div>
 
@@ -112,8 +126,11 @@
         <div class="details">🎨 <strong>Color:</strong> Silver</div>
         <div class="details">🪑 <strong>Seats:</strong> 5</div>
         <div class="tags">
-            <span>Bluetooth</span> <span>Tire Pressure Warning</span> <span>USB Inputs</span>
-            <span>Trip Computer</span> <span>Rear Bench Seats</span>
+            <span>Bluetooth</span>
+            <span>Tire Pressure Warning</span>
+            <span>USB Inputs</span>
+            <span>Trip Computer</span>
+            <span>Rear Bench Seats</span>
         </div>
     </div>
     <a href="#" class="button">Check Availability</a>
