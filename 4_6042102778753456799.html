@@ -1,39 +1,47 @@
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=, initial-scale=1.0">
-<!--    <link rel="stylesheet" href="zeinab.css">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skoda Kodiaq 2025 - Car Rental</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            color: black;
-
+            font-family: Arial, sans-serif;
         }
-        header {
 
+        body {
+            background-color: #f5f5f5;
+        }
+
+        header {
             width: 100%;
             height: 180px;
             color: white;
             background-color: #007bff;
             text-align: left;
-            top: 0;
-            border-radius: 0px 0px 90px 90px;
+            border-radius: 0 0 90px 90px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
         }
-        h1{
+
+        h1 {
             color: white;
             text-align: center;
             font-size: 45px;
             padding-top: 20px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
         }
+
         #logo {
             padding-top: 10px;
             margin-left: 20px;
         }
+
         .ull {
-            padding: 0%;
+            padding: 0;
             font-size: large;
             font-weight: bold;
             list-style-type: none;
@@ -42,101 +50,110 @@
             margin-bottom: 20px;
             margin-top: -65px;
             margin-right: 25px;
-            justify-content: end;
+            justify-content: flex-end;
+        }
 
-        }
-        a{
+        a {
             text-decoration: none;
+            transition: all 0.3s ease;
         }
-        a:hover{
-            text-decoration:underline;
+
+        a:hover {
+            text-decoration: underline;
+            opacity: 0.8;
         }
-        #info{
-            margin-left: 660px;
-            margin-top: -380px;
-            font-size: large;
-            margin-right: 20px;
+
+        .main-container {
+            display: flex;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+            gap: 30px;
         }
-        #car{
-            margin-top: 30px;
-            margin-left: 30px;
-            border:solid 1px black;
+
+        .image-section {
+            flex: 1.5; /* جعل قسم الصورة أكبر */
+            min-width: 700px; /* زيادة العرض الأدنى */
         }
-        .price{
-            font-size: larger;
+
+        .info-section {
+            flex: 1;
+            min-width: 500px;
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            align-self: center; /* توسيط قسم المعلومات عمودياً */
+        }
+
+        .car-container {
+            position: relative;
+            width: 100%;
+        }
+
+        .car-image {
+            width: 100%;
+            height: 500px; /* زيادة ارتفاع الصورة */
+            object-fit: cover;
+            border: solid 1px #ddd;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .thumbnail-container {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .thumbnail {
+            width: 100px; /* زيادة حجم الصور المصغرة */
+            height: 75px;
+            object-fit: cover;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .thumbnail:hover {
+            border-color: #007bff;
+            transform: scale(1.05);
+        }
+
+        .thumbnail.active {
+            border-color: #007bff;
+            transform: scale(1.05);
+        }
+
+        .price {
+            font-size: 28px;
             color: rgb(149, 26, 26);
             font-weight: bold;
+            margin: 15px 0;
         }
-        footer{
-            width: 100%;
-            height: 200px;
-            background-color: #d8d6d6;
-            box-shadow: 0 -4px 6px -2px rgba(0, 0, 0, 0.3);
-            margin-top: 70px;
-            border-radius: 90px 90px 0px 0px;
-            color: black;
-        }
-        #follow{
-            display: flex;
-            gap: 20px;
-            list-style-type: none;
-            margin-left: 50px;
-            margin-top: 10px;
 
-        }
-        #carname{
+        #carname {
             margin-bottom: 10px;
             font-weight: bold;
             font-size: xx-large;
+            color: #007bff;
+        }
 
+        .details {
+            margin: 8px 0;
+            font-size: 16px;
         }
-        #fo{
-            font-size: large;
-            margin-left: 120px;
-            padding-top: 30px;
-        }
-        a{
-            color: black;
-        }
-        #footlink{
 
-            font-size: small;
-            display: flex;
-            list-style-type: none;
-            gap: 20px;
-            margin-left: 40px;
-            margin-top: 20px;
+        .tags span {
+            background: #e0f7fa;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 14px;
+            display: inline-block;
+            margin: 5px 5px 5px 0;
         }
-        #copyrights{
-            font-size: small;
-            margin-top: 20px;
-            margin-left: 40px;
-            list-style-type: none;
-        }
-        #downsec{
-            margin-left: 950px;
-            margin-top: -140px;
 
-        }
-        #downlinks{
-            list-style-type: none;
-            display: flex;
-            gap: 20px;
-        }
-        #down{
-            font-size: large;
-            margin-left: 10px;
-            margin-bottom: 10px
-        }
-        #contact{
-            list-style-type: none;
-            font-size: small;
-
-        }
-        #contactinfo{
-            font-size: small;
-            margin-top: 30px;
-        }
         .button {
             display: block;
             width: 100%;
@@ -146,53 +163,181 @@
             padding: 14px;
             font-size: 16px;
             text-decoration: none;
-            border-radius: 0 0 10px 10px;
-            margin-top: 10px;
+            border-radius: 10px;
+            margin-top: 20px;
             font-weight: bold;
-        }
-        .tags span {
-            background: #e0f7fa;
-            padding: 6px 12px;
-            border-radius: 6px;
-            font-size: 14px;
+            transition: background 0.3s ease;
+            border: none;
+            cursor: pointer;
         }
 
+        .button:hover {
+            background: #1565c0;
+            text-decoration: none;
+        }
+
+        footer {
+            width: 100%;
+            height: 200px;
+            background-color: #d8d6d6;
+            box-shadow: 0 -4px 6px -2px rgba(0, 0, 0, 0.3);
+            margin-top: 70px;
+            border-radius: 90px 90px 0 0;
+            color: black;
+            padding: 20px 0;
+        }
+
+        #follow {
+            display: flex;
+            gap: 20px;
+            list-style-type: none;
+            margin-left: 50px;
+            margin-top: 10px;
+        }
+
+        #fo {
+            font-size: large;
+            margin-left: 120px;
+            padding-top: 30px;
+            font-weight: bold;
+        }
+
+        #footlink {
+            font-size: small;
+            display: flex;
+            list-style-type: none;
+            gap: 20px;
+            margin-left: 40px;
+            margin-top: 20px;
+        }
+
+        #copyrights {
+            font-size: small;
+            margin-top: 20px;
+            margin-left: 40px;
+            list-style-type: none;
+        }
+
+        #downsec {
+            margin-left: 950px;
+            margin-top: -140px;
+        }
+
+        #downlinks {
+            list-style-type: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        #down {
+            font-size: large;
+            margin-left: 10px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        #contact {
+            list-style-type: none;
+            font-size: small;
+        }
+
+        #contactinfo {
+            font-size: small;
+            margin-top: 30px;
+            font-weight: bold;
+        }
+
+        @media (max-width: 1200px) {
+            .main-container {
+                flex-direction: column;
+                align-items: center;
+                max-width: 800px;
+            }
+
+            .image-section, .info-section {
+                min-width: 100%;
+            }
+
+            .car-image {
+                height: 400px;
+            }
+
+            #downsec {
+                margin-left: 40px;
+                margin-top: 20px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            header {
+                height: 160px;
+            }
+
+            h1 {
+                font-size: 35px;
+                padding-top: 15px;
+            }
+
+            .car-image {
+                height: 250px;
+            }
+
+            .thumbnail {
+                width: 70px;
+                height: 50px;
+            }
+
+            footer {
+                height: auto;
+                padding-bottom: 30px;
+            }
+
+            #downsec {
+                margin: 20px 0 0 40px;
+            }
+        }
     </style>
-    <title>car</title>
 </head>
 
 <body>
-    <header>
+<header>
+    <div id="logo">
+        <a href="index.html">
+            <img src="logo.png" alt="Speed Car Rental Logo" width="130px" height="70px">
+        </a>
+    </div>
 
-        <div id="logo">
-            <a href="اسم صفحة ياسمينا">
-                <img src="logo.png" alt="logo" width="130px" height="70px">
-            </a>
+    <ul class="ull">
+        <li><a href="index.html" style="color:white">Home</a></li>
+        <li><a href="sale.html" target="_blank" style="color:white">Sale</a></li>
+        <li><a href="rent.html" target="_blank" style="color:white">Rent</a></li>
+        <li><a href="About-us.html" style="color:white">About us</a></li>
+        <li><a href="user.html">
+            <img src="user.png" alt="User Account" width="30" height="30">
+        </a></li>
+    </ul>
+    <h1>Skoda Kodiaq 2025</h1>
+</header>
+
+<div class="main-container">
+    <div class="image-section">
+        <div class="car-container">
+            <img id="main-car-image" src="file:///D:/practice%20website/imgs/car1.jpg" alt="Skoda Kodiaq 2025 - Front View" class="car-image">
+
+            <div class="thumbnail-container">
+                <img src="car1.jpg" alt="Front View" class="thumbnail active" onclick="changeImage('car1.jpg', this)">
+                <img src="car2.jpg" alt="Side View" class="thumbnail" onclick="changeImage('car2.jpg', this)">
+                <img src="car3.jpg" alt="Interior View" class="thumbnail" onclick="changeImage('car3.jpg', this)">
+                <img src="car4.jpg" alt="Back View" class="thumbnail" onclick="changeImage('car4.jpg', this)">
+            </div>
         </div>
+    </div>
 
-        <ul class="ull">
-
-            <li><a href="اسم صفحة ياسمينا" style="color:white">Home</a></li>
-            <li><a href="sale.html" target="_blank" style="color:white">Sale</a></li>
-            <li><a href="rent.html" target="_blank" style="color:white">Rent</a></li>
-            <li><a href="About-us.html" style="color:white">About us</a></li>
-            <!-- <li> <a href="اسم صفخة الnotification">
-                    <img src="notifications.png" alt="notifications" width="30" height="30">
-                </a> </li>-->
-            <li><a href=" اسم صفحة الuser">
-                    <img src="user.png" alt="user" width="30" height="30">
-                </a></li>
-        </ul>
-        <h1>Skoda Kodiaq 2025</h1>
-
-    </header>
-    <img src="file:///D:/practice%20website/imgs/car1.jpg" alt="car image" width="600px" heigh="350px" id="car">
-
-    <section id="info">
+    <div class="info-section">
         <p id="carname">Skoda Kodiaq 2025</p>
         <div class="price">EGP 3,500 <span style="color:rgb(81, 78, 78); font-size:17px; font-weight: bold;">Daily</span></div>
 
-        <div style=" color: #000000; font-size: 17px;margin-top: 10px; margin-bottom: 10px;">
+        <div style="color: #000000; font-size: 17px; margin-top: 10px; margin-bottom: 10px; line-height: 1.5;">
             The Skoda Kodiaq 2025 is a premium 7-seater SUV offering bold design, enhanced comfort, and cutting-edge
             technology. It features a spacious interior, a new curved infotainment display, and advanced driver-assist
             systems. Power options include efficient petrol and plug-in hybrid variants, with all-wheel drive available.
@@ -203,53 +348,72 @@
         <div class="details">⚙️ <strong>Transmission:</strong> 4-cylinder automatic</div>
         <div class="details">📅 <strong>Model Year:</strong> 2025</div>
         <div class="details">⛽ <strong>Fuel Type:</strong> Petrol</div>
-        <div class="details">🎨 <strong>Color:</strong> white</div>
+        <div class="details">🎨 <strong>Color:</strong> White</div>
         <div class="details">🪑 <strong>Seats:</strong> 7</div>
+
         <div class="tags">
             <span>Bluetooth</span>
             <span>Tire Pressure Warning</span>
             <span>USB Inputs</span>
             <span>Trip Computer</span>
             <span>Rear Bench Seats</span>
-            <a href="#" class="button">Check Availability</a>
         </div>
-    </section>
-    <footer>
-        <p id="fo">Follow Us</p>
-        <ul id="follow">
-            <li><a href="https://www.youtube.com/"><img src="youtube.png" alt="youtube"height="25px"width="25px"></a></li>
-            <li><a href="https://www.instagram.com/"><img src="insta.png" alt="instagram"height="25px"width="25px"></a></li>
-            <li><a href="https://www.tiktok.com/en/"><img src="tiktok.png" alt="tiktok"height="25px"width="25px"></a></li>
-            <li><a href="https://www.linkedin.com/"><img src="linkedin.png" alt="linkedin"height="25px"width="25px"></a></li>
-            <li><a href="https://www.facebook.com/?locale=ar_AR"><img src="facebook.png" alt="facebook"height="25px"width="25px"></a></li>
-            <li><a href="https://x.com/?lang=en"><img src="x.png" alt="X"height="25px"width="25px"></a></li>
-            
+
+        <a href="#" class="button">Check Availability</a>
+    </div>
+</div>
+
+<footer>
+    <p id="fo">Follow Us</p>
+    <ul id="follow">
+        <li><a href="https://www.youtube.com/"><img src="youtube.png" alt="YouTube" height="25px" width="25px"></a></li>
+        <li><a href="https://www.instagram.com/"><img src="insta.png" alt="Instagram" height="25px" width="25px"></a></li>
+        <li><a href="https://www.tiktok.com/en/"><img src="tiktok.png" alt="TikTok" height="25px" width="25px"></a></li>
+        <li><a href="https://www.linkedin.com/"><img src="linkedin.png" alt="LinkedIn" height="25px" width="25px"></a></li>
+        <li><a href="https://www.facebook.com/?locale=ar_AR"><img src="facebook.png" alt="Facebook" height="25px" width="25px"></a></li>
+        <li><a href="https://x.com/?lang=en"><img src="x.png" alt="X" height="25px" width="25px"></a></li>
+    </ul>
+
+    <ul id="footlink">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="About-us.html">About Us</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms & Conditions</a></li>
+    </ul>
+
+    <ul id="copyrights">
+        <li>&copy; 2025 Speed. All Rights Reserved</li>
+        <li>Designed by team: Beyond The Stack</li>
+    </ul>
+
+    <section id="downsec">
+        <p id="down">Download the app</p>
+        <ul id="downlinks">
+            <li><a href="https://www.apple.com/eg/app-store/"><img src="app-store.png" alt="App Store" height="25px" width="80px"></a></li>
+            <li><a href="https://play.google.com/store/games?hl=en&pli=1"><img src="google-play.png" alt="Google Play" height="25px" width="80px"></a></li>
         </ul>
-        <ul id="footlink"> 
-            <li><a href="">Home</a></li>
-            <li><a href="">About Us</a></li>
-            <li><a href="https://www.whatsapp.com/">Contact Us</a></li>
-            <li><a href="">Privacy Policy</a></li>
-            <li><a href="">Terms&Conditions</a></li>
-        </ul>
-        <ul id="copyrights">
-            <li>&copy; 2025 Speed.All Rights Preserved</li>
-            <li>Designed by team:Beyond The Stack</li>
-        </ul>
-        <section id="downsec"><p id="down"> Download the app</p>
-            <ul id="downlinks">
-                <li><a href="https://www.apple.com/eg/app-store/"><img src="Download app store.png" alt="App store" height="25px" width="80px"></a></li>
-                <li><a href="https://play.google.com/store/games?hl=en&pli=1"><img src="download google play.png" alt="Google play"height="25px" width="80px"></a></li>
-            </ul>
+
         <p id="contactinfo">Contact info:</p>
         <ul id="contact">
-            <li>Email: <a href="https://mail.google.com/mail/u/0/#inbox">beyond_the_stack@gmail.com</a></li>
-            <li>Phone: +201111222223</li>
-        </ul></section>
+            <li>Email: <a href="mailto:beyond_the_stack@gmail.com">beyond_the_stack@gmail.com</a></li>
+            <li>Phone: +20 111 122 2223</li>
+        </ul>
+    </section>
+</footer>
 
-        
-            </footer>
+<script>
+    function changeImage(src, element) {
+        // Change main image
+        document.getElementById('main-car-image').src = src;
 
+        // Remove active class from all thumbnails
+        const thumbnails = document.querySelectorAll('.thumbnail');
+        thumbnails.forEach(thumb => thumb.classList.remove('active'));
+
+        // Add active class to clicked thumbnail
+        element.classList.add('active');
+    }
+</script>
 </body>
-
 </html>
